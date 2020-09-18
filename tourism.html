@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tourism</title>
+	<style type="text/css">
+		* {
+
+			margin: 0;
+			padding: 0;
+		}
+
+		menu {
+			width: 100%;
+			margin: 0 auto;
+
+
+		}
+
+		ul {
+
+			list-style-type: none;
+			background: #555;
+			text-align: center;
+			border: 1px solid #e7e7e7;
+
+
+		}
+
+		ul li {
+
+			display: inline;
+
+		}
+
+		ul li a {
+			color: white;
+			text-transform: uppercase;
+			margin-right: 40px;
+			margin-left: 40px;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			display: inline-block;
+			text-decoration: none;
+
+		}
+
+		ul li a:hover {
+			color: #4d4dff;
+		}
+
+		.welcome {
+			position: relative;
+
+		}
+
+		.welcome img {
+			width: 100%;
+			border: none;
+			vertical-align: top;
+
+
+		}
+
+		.text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-70%, -180%);
+			font-size: 42px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: bold;
+			color: white;
+			text-shadow: 2px 2px 4px #000000;
+		}
+
+		.intro {
+			padding: 40px;
+			background: #555;
+			margin: 0;
+			border: none;
+
+
+		}
+
+		.intro p {
+			text-align: center;
+
+
+
+		}
+
+		.title {
+			color: white;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			font-family: Arial;
+			background: #555;
+		}
+
+		/* The grid: Four equal columns that floats next to each other */
+		.column {
+			float: left;
+			width: 25%;
+
+			padding: 10px;
+		}
+
+		/* Style the images inside the grid */
+		.column img {
+			opacity: 0.8;
+			cursor: pointer;
+		}
+
+		.column img:hover {
+			opacity: 1;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		/* The expanding image container */
+		.container {
+			position: relative;
+			display: none;
+		}
+
+		/* Expanding image text */
+		#imgtext {
+			position: absolute;
+			bottom: 15px;
+			left: 15px;
+			color: white;
+			font-size: 20px;
+		}
+
+		/* Closable button inside the expanded image */
+		.closebtn {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			color: white;
+			font-size: 35px;
+			cursor: pointer;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="menu">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="map.html">Map</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+
+		</ul>
+	</div>
+	<div class="welcome">
+		<img src="images/sl.jpg" alt="Welcome" style="border:0;" width="1600" height="500">
+		<div class="text">
+			<p>Welcome to</p>
+		</div>
+	</div>
+	<div class="intro">
+		<p>Sri Lanka is one of the leading romantic destinations in the whole world. The land of serendipity brings
+			spiritual tranquility and a chance to rediscover oneself. <br>The beauty of this tiny island is simply
+			breath-taking. Known for its enchanting ancient ruins, endless soft-sanded beaches, imposing mountains, colourful
+			festivals, tempting water sports, dense wild-life, diverse ethnical groups and off the top hospitality from the
+			local residents, Sri Lanka is bound to make you come back again.<br> Sri Lanka Travel and Tourism brings all of
+			this for you right under your fingertips so that you can discover the serene island for yourself. </p>
+	</div>
+
+	<div class="title" style="text-align:center">
+		<h2>See what awaits in Sri Lanka</h2>
+		<p>Don't miss</p>
+	</div>
+
+	<!-- The four columns -->
+	<div class="row">
+		<div class="column">
+			<img src="images/na.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+		</div>
+		<div class="column">
+			<img src="images/un.jpg" alt="Pristine" style="width:100%" onclick="myFunction(this);">
+		</div>
+		<div class="column">
+			<img src="images/wld.jpg" alt="Wild-Life" style="width:100%" onclick="myFunction(this);">
+		</div>
+
+		<div class="column">
+			<img src="images/r.jpg" alt="Festive" style="width:100%" onclick="myFunction(this);">
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<img src="images/b.jpg" alt="Bliss" style="width:100%" onclick="myFunction(this);">
+		</div>
+		<div class="column">
+			<img src="images/su.jpg" alt="Thrills" style="width:100%" onclick="myFunction(this);">
+		</div>
+
+		<div class="column">
+			<img src="images/sd.jpg" alt="Essence" style="width:100%" onclick="myFunction(this);">
+		</div>
+		<div class="column">
+			<img src="images/he.jpg" alt="Heritage" style="width:100%" onclick="myFunction(this);">
+		</div>
+	</div>
+
+	<div class="container">
+		<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+		<img id="expandedImg" style="width:100%">
+		<div id="imgtext"></div>
+	</div>
+
+	<script>
+		function myFunction(imgs) {
+			var expandImg = document.getElementById("expandedImg");
+			var imgText = document.getElementById("imgtext");
+			expandImg.src = imgs.src;
+			imgText.innerHTML = imgs.alt;
+			expandImg.parentElement.style.display = "block";
+		}
+	</script>
+</body>
+
+</html>
